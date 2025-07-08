@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Instagram, Facebook, Music } from 'lucide-react';
 import { useTranslation } from '../contexts/TranslationContext';
 import { Button } from '@/components/ui/button';
 
@@ -20,6 +20,27 @@ const Header: React.FC = () => {
   const toggleLanguage = () => {
     setLanguage(language === 'fr' ? 'en' : 'fr');
   };
+
+  const socialLinks = [
+    {
+      name: 'Instagram',
+      href: 'https://www.instagram.com/bcsolution.offitial',
+      icon: Instagram,
+      color: 'hover:text-pink-600'
+    },
+    {
+      name: 'Facebook',
+      href: 'https://www.facebook.com/profile.php?id=61578245456049',
+      icon: Facebook,
+      color: 'hover:text-blue-600'
+    },
+    {
+      name: 'TikTok',
+      href: 'https://www.tiktok.com/@bcsolution.offitial',
+      icon: Music,
+      color: 'hover:text-black'
+    }
+  ];
 
   return (
     <header className="bg-white shadow-sm border-b">
@@ -47,8 +68,24 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Language Toggle & Mobile Menu Button */}
+          {/* Social Media Icons, Language Toggle & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
+            {/* Social Media Icons */}
+            <div className="hidden sm:flex items-center space-x-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-gray-600 transition-colors ${social.color}`}
+                  aria-label={social.name}
+                >
+                  <social.icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
+
             <Button
               variant="outline"
               size="sm"
@@ -89,6 +126,22 @@ const Header: React.FC = () => {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* Social Media Icons for Mobile */}
+              <div className="flex items-center space-x-4 px-3 py-2">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-gray-600 transition-colors ${social.color}`}
+                    aria-label={social.name}
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         )}
