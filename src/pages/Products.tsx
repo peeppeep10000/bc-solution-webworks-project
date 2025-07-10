@@ -45,7 +45,7 @@ const Products: React.FC = () => {
       id: 5,
       name: 'Étanchéité',
       description: 'Produits et solutions d\'étanchéité',
-      image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
       color: 'bg-red-500',
       route: '/products/etancheite'
     }

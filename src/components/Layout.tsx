@@ -12,7 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div 
       className="min-h-screen flex flex-col bg-gray-50 relative"
       style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1920&q=80)',
+        backgroundImage: 'url(/lovable-uploads/f0545566-5170-4c2e-b68b-2e85014d0619.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
