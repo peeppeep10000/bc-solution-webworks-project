@@ -13,7 +13,7 @@ const Products: React.FC = () => {
       id: 1,
       name: 'Profil de montage et accessoires',
       description: 'Solutions complètes de profilés et accessoires de montage',
-      icon: '🔧',
+      image: '/lovable-uploads/a480809c-538b-4b0f-a7b2-494e65f37a03.png',
       color: 'bg-blue-500',
       route: '/products/profil-montage'
     },
@@ -21,7 +21,7 @@ const Products: React.FC = () => {
       id: 2,
       name: 'Rail et accessoires',
       description: 'Rails industriels et leurs accessoires',
-      icon: '⚙️',
+      image: '/lovable-uploads/340ee761-1c8d-4454-8dd2-0bae3885734a.png',
       color: 'bg-green-500',
       route: '/products/rail-accessoires'
     },
@@ -29,7 +29,7 @@ const Products: React.FC = () => {
       id: 3,
       name: 'Visserie et fixation',
       description: 'Éléments de visserie et systèmes de fixation',
-      icon: '🔩',
+      image: '/lovable-uploads/bb10962b-84a4-4a2b-bea3-e0213a7fddd5.png',
       color: 'bg-purple-500',
       route: '/products/visserie-fixation'
     },
@@ -37,7 +37,7 @@ const Products: React.FC = () => {
       id: 4,
       name: 'Chemin de câble',
       description: 'Solutions de cheminement de câbles',
-      icon: '🏗️',
+      image: '/lovable-uploads/8005c7ef-dde1-4d27-bdf3-44783389ce61.png',
       color: 'bg-orange-500',
       route: '/products/chemin-cable'
     },
@@ -45,7 +45,7 @@ const Products: React.FC = () => {
       id: 5,
       name: 'Étanchéité',
       description: 'Produits et solutions d\'étanchéité',
-      icon: '🔌',
+      image: '/lovable-uploads/3b14c170-16d1-4fbc-b435-c0ed06e81c12.png',
       color: 'bg-red-500',
       route: '/products/etancheite'
     }
@@ -80,8 +80,12 @@ const Products: React.FC = () => {
                 onClick={() => handleCategoryClick(category.route)}
                 className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
-                <div className={`${category.color} h-32 flex items-center justify-center`}>
-                  <span className="text-4xl">{category.icon}</span>
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={category.image} 
+                    alt={category.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-3 text-gray-800">
