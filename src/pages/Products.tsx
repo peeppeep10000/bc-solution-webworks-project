@@ -2,51 +2,58 @@
 import React from 'react';
 import { useTranslation } from '../contexts/TranslationContext';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Products: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const productCategories = [
     {
       id: 1,
-      name: t('product-category') + ' 1',
-      description: 'Description du produit à venir',
+      name: 'Profil de montage et accessoires',
+      description: 'Solutions complètes de profilés et accessoires de montage',
       icon: '🔧',
-      color: 'bg-blue-500'
+      color: 'bg-blue-500',
+      route: '/products/profil-montage'
     },
     {
       id: 2,
-      name: t('product-category') + ' 2',
-      description: 'Description du produit à venir',
+      name: 'Rail et accessoires',
+      description: 'Rails industriels et leurs accessoires',
       icon: '⚙️',
-      color: 'bg-green-500'
+      color: 'bg-green-500',
+      route: '/products/rail-accessoires'
     },
     {
       id: 3,
-      name: t('product-category') + ' 3',
-      description: 'Description du produit à venir',
+      name: 'Visserie et fixation',
+      description: 'Éléments de visserie et systèmes de fixation',
       icon: '🔩',
-      color: 'bg-purple-500'
+      color: 'bg-purple-500',
+      route: '/products/visserie-fixation'
     },
     {
       id: 4,
-      name: t('product-category') + ' 4',
-      description: 'Description du produit à venir',
+      name: 'Chemin de câble',
+      description: 'Solutions de cheminement de câbles',
       icon: '🏗️',
-      color: 'bg-orange-500'
+      color: 'bg-orange-500',
+      route: '/products/chemin-cable'
     },
     {
       id: 5,
-      name: t('product-category') + ' 5',
-      description: 'Description du produit à venir',
+      name: 'Étanchéité',
+      description: 'Produits et solutions d\'étanchéité',
       icon: '🔌',
-      color: 'bg-red-500'
+      color: 'bg-red-500',
+      route: '/products/etancheite'
     }
   ];
 
-  const handleCategoryClick = (categoryId: number) => {
-    console.log(`Clicked category ${categoryId}`);
-    // This will be implemented later with actual routing
+  const handleCategoryClick = (route: string) => {
+    console.log(`Navigating to ${route}`);
+    navigate(route);
   };
 
   return (
@@ -70,7 +77,7 @@ const Products: React.FC = () => {
             {productCategories.map((category) => (
               <div
                 key={category.id}
-                onClick={() => handleCategoryClick(category.id)}
+                onClick={() => handleCategoryClick(category.route)}
                 className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
                 <div className={`${category.color} h-32 flex items-center justify-center`}>
