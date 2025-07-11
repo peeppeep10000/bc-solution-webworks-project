@@ -11,17 +11,22 @@ const CompanyStory: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              Notre Expertise
+              {t('about-story-title')}
             </h2>
             <div className="prose prose-lg text-gray-700 space-y-6">
-              <p>
-                BC Solution accompagne les acteurs de l'industrie en fournissant des solutions techniques spécialisées dans le montage et le supportage industriel.
-              </p>
-              <p>
-                Rails métalliques, consoles murales, profils techniques, systèmes de fixation... chaque produit est soigneusement sélectionné pour garantir fiabilité, durabilité et conformité aux standards industriels les plus exigeants.
-              </p>
-              <p>
-                Grâce à notre expertise métier et à une gestion réactive des approvisionnements, nous assurons la continuité et la sécurité de vos installations industrielles.
+              {t('about-story-text').split('\n\n').map((paragraph, index) => (
+                <p key={index} className="text-lg leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            
+            <div className="mt-8 bg-blue-50 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                {t('mission-title')}
+              </h3>
+              <p className="text-gray-700">
+                {t('mission-text')}
               </p>
             </div>
           </div>

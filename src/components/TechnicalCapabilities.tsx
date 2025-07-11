@@ -1,28 +1,31 @@
 
 import React from 'react';
 import { Wrench, Cog, Shield, Truck } from 'lucide-react';
+import { useTranslation } from '../contexts/TranslationContext';
 
 const TechnicalCapabilities: React.FC = () => {
+  const { t } = useTranslation();
+
   const capabilities = [
     {
       icon: Wrench,
-      title: "Rails & Consoles",
-      description: "Rails métalliques et consoles murales pour tous types d'installations industrielles"
+      title: t('rails-consoles'),
+      description: t('rails-consoles-desc')
     },
     {
       icon: Cog,
-      title: "Profils Techniques",
-      description: "Gamme complète de profils et éléments de fixation conformes aux normes"
+      title: t('profils-techniques'),
+      description: t('profils-techniques-desc')
     },
     {
       icon: Shield,
-      title: "Étanchéité",
-      description: "Solutions d'étanchéité professionnelles incluant bandes butyle et joints spécialisés"
+      title: t('etancheite'),
+      description: t('etancheite-desc')
     },
     {
       icon: Truck,
-      title: "Visserie Industrielle",
-      description: "Visserie technique et éléments de fixation pour applications industrielles"
+      title: t('visserie-industrielle'),
+      description: t('visserie-industrielle-desc')
     }
   ];
 
@@ -31,7 +34,7 @@ const TechnicalCapabilities: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Nos Capacités Techniques
+            {t('technical-capabilities')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Une expertise complète dans les solutions de montage et supportage industriel

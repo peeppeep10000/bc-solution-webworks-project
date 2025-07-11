@@ -1,28 +1,31 @@
 
 import React from 'react';
 import { Award, CheckCircle, Zap, Users } from 'lucide-react';
+import { useTranslation } from '../contexts/TranslationContext';
 
 const QualityCommitment: React.FC = () => {
+  const { t } = useTranslation();
+
   const commitments = [
     {
       icon: CheckCircle,
-      title: "Qualité Certifiée",
-      description: "Conformité DIN EN et galvanisation Z275 pour une durabilité maximale"
+      title: t('quality-certified'),
+      description: t('quality-certified-desc')
     },
     {
       icon: Award,
-      title: "Stock Permanent",
-      description: "Disponibilité immédiate des produits essentiels pour vos projets"
+      title: t('permanent-stock'),
+      description: t('permanent-stock-desc')
     },
     {
       icon: Zap,
-      title: "Service Réactif",
-      description: "Réponse rapide à vos demandes techniques et commerciales"
+      title: t('reactive-service'),
+      description: t('reactive-service-desc')
     },
     {
       icon: Users,
-      title: "Livraison Rapide",
-      description: "Réseau de distribution efficace pour un service national"
+      title: t('fast-delivery'),
+      description: t('fast-delivery-desc')
     }
   ];
 
@@ -31,7 +34,7 @@ const QualityCommitment: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Notre Engagement Qualité
+            {t('quality-commitment')}
           </h2>
           <p className="text-xl text-gray-600">
             Des standards élevés pour garantir votre satisfaction

@@ -1,62 +1,60 @@
 
 import React from 'react';
+import { Star, Shield, Zap, Award } from 'lucide-react';
+import { useTranslation } from '../contexts/TranslationContext';
 
 const TeamValues: React.FC = () => {
-  return (
-    <section className="bg-blue-900 text-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-4xl font-bold mb-8">
-              Nos Valeurs
-            </h2>
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-600 rounded-full p-2 flex-shrink-0">
-                  <span className="text-white font-bold">01</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Excellence Technique</h3>
-                  <p className="text-blue-100">
-                    Sélection rigoureuse de produits techniques conformes aux standards industriels
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-600 rounded-full p-2 flex-shrink-0">
-                  <span className="text-white font-bold">02</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Proximité Client</h3>
-                  <p className="text-blue-100">
-                    Accompagnement personnalisé et conseils techniques adaptés à vos besoins
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-600 rounded-full p-2 flex-shrink-0">
-                  <span className="text-white font-bold">03</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Innovation Continue</h3>
-                  <p className="text-blue-100">
-                    Veille technologique permanente pour proposer les meilleures solutions
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+  const { t } = useTranslation();
 
-          <div className="bg-white/10 rounded-lg p-8 backdrop-blur-sm">
-            <blockquote className="text-xl italic mb-6">
-              "Chez BC Solution, nous croyons que chaque projet mérite des solutions techniques de qualité supérieure. Notre mission est de vous accompagner dans la réussite de vos installations industrielles."
-            </blockquote>
-            <cite className="text-blue-200 font-semibold">
-              — Équipe BC Solution
-            </cite>
-          </div>
+  const values = [
+    {
+      icon: Star,
+      title: t('excellence'),
+      description: t('excellence-desc')
+    },
+    {
+      icon: Shield,
+      title: t('reliability'),
+      description: t('reliability-desc')
+    },
+    {
+      icon: Zap,
+      title: t('reactivity'),
+      description: t('reactivity-desc')
+    },
+    {
+      icon: Award,
+      title: t('expertise'),
+      description: t('expertise-desc')
+    }
+  ];
+
+  return (
+    <section className="bg-blue-600 text-white py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">
+            {t('values-title')}
+          </h2>
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            Les valeurs qui guident notre action au quotidien et définissent notre engagement envers nos clients
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {values.map((value, index) => (
+            <div key={index} className="text-center">
+              <div className="bg-blue-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-blue-400 transition-colors">
+                <value.icon className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">
+                {value.title}
+              </h3>
+              <p className="text-blue-100 leading-relaxed">
+                {value.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

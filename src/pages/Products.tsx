@@ -65,7 +65,7 @@ const Products: React.FC = () => {
             {t('products-title')}
           </h1>
           <p className="text-xl text-center opacity-90">
-            Découvrez notre gamme complète de solutions industrielles
+            {t('products-subtitle')}
           </p>
         </div>
       </section>
@@ -95,7 +95,7 @@ const Products: React.FC = () => {
                     {category.description}
                   </p>
                   <div className="flex items-center text-blue-600 font-medium">
-                    <span>Voir les produits</span>
+                    <span>{t('see-products')}</span>
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </div>
                 </div>
@@ -109,11 +109,10 @@ const Products: React.FC = () => {
       <section className="bg-blue-50 py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            Catalogue en cours de développement
+            {t('catalog-development')}
           </h2>
           <p className="text-gray-600 text-lg">
-            Nos équipes travaillent actuellement sur l'ajout de tous nos produits. 
-            Contactez-nous directement pour plus d'informations sur nos solutions disponibles.
+            {t('catalog-development-text')}
           </p>
         </div>
       </section>

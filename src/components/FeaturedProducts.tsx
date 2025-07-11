@@ -2,33 +2,36 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '../contexts/TranslationContext';
 
 const FeaturedProducts: React.FC = () => {
+  const { t } = useTranslation();
+
   const featuredProducts = [
     {
-      name: 'Rails',
+      name: t('rails'),
       image: '/lovable-uploads/a480809c-538b-4b0f-a7b2-494e65f37a03.png',
-      description: 'Rails métalliques de haute qualité'
+      description: t('rails-desc')
     },
     {
-      name: 'Consoles',
+      name: t('consoles'),
       image: '/lovable-uploads/340ee761-1c8d-4454-8dd2-0bae3885734a.png',
-      description: 'Consoles murales robustes'
+      description: t('consoles-desc')
     },
     {
-      name: 'Griffe serre cadre',
+      name: t('griffe-serre-cadre'),
       image: '/lovable-uploads/bb10962b-84a4-4a2b-bea3-e0213a7fddd5.png',
-      description: 'Systèmes de fixation spécialisés'
+      description: t('griffe-desc')
     },
     {
-      name: 'Bande butyle',
+      name: t('bande-butyle'),
       image: '/lovable-uploads/8005c7ef-dde1-4d27-bdf3-44783389ce61.png',
-      description: 'Solutions d\'étanchéité professionnelles'
+      description: t('bande-desc')
     },
     {
-      name: 'Visserie',
-      image: '/lovable-uploads/3b14c170-16d1-4fbc-b435-c0ed06e81c12.png',
-      description: 'Visserie technique spécialisée'
+      name: t('robinet'),
+      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      description: t('robinet-desc')
     }
   ];
 
@@ -36,9 +39,9 @@ const FeaturedProducts: React.FC = () => {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-6">Produits Phares</h2>
+          <h2 className="text-4xl font-bold mb-6">{t('featured-products-title')}</h2>
           <p className="text-xl text-gray-600">
-            Découvrez notre gamme de produits techniques professionnels
+            {t('featured-products-subtitle')}
           </p>
         </div>
         

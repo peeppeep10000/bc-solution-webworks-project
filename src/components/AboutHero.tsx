@@ -12,9 +12,29 @@ const AboutHero: React.FC = () => {
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             {t('about-title')}
           </h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-            Solutions de montage & supportage pour professionnels du bâtiment et de l'industrie
+          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8">
+            {t('about-subtitle')}
           </p>
+          
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white mb-2">10+</div>
+              <div className="text-blue-200">{t('experience-years')}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white mb-2">500+</div>
+              <div className="text-blue-200">{t('satisfied-clients')}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white mb-2">10k+</div>
+              <div className="text-blue-200">{t('products-delivered')}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white mb-2">100%</div>
+              <div className="text-blue-200">{t('national-coverage')}</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
