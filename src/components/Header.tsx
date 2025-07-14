@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe, Instagram, Facebook, Music } from 'lucide-react';
 import { useTranslation } from '../contexts/TranslationContext';
 import { Button } from '@/components/ui/button';
+import bcSolutionLogo from '../assets/bc-solution-logo.png';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,7 +48,8 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center space-x-2">
+            <img src={bcSolutionLogo} alt="BC Solution" className="h-10 w-auto" />
             <span className="text-2xl font-bold text-blue-600">BC Solution</span>
           </Link>
 
